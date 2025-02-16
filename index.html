@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BoxGame</title>
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/twemoji@11.3.0/2/svg/1f636.svg" type="image/x-icon">
+
+
+         <style>favicon.ico
+
+            *{
+            margin: 0%;
+                padding: 0%;
+            }
+            html,body{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            .boxes{
+                height: 300px;  
+                width: 300px;
+                border: 3px solid black;
+                margin-right: 10px;
+                margin-bottom: 13px;
+            font-family: 'Montserrat';
+            font-size: x-large;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            }
+
+            #first2 ,#second2{
+            display: flex;
+            
+            }
+
+
+
+
+
+         </style>
+
+    </head>
+    <body id="shareer">
+        <div id="main">
+             <div id="first2">
+              <div id="box1" class="boxes"><h1>1</h1></div>
+               <div id="box2" class="boxes"><h1>2</h1></div>
+             </div>
+             <div id="second2">
+              <div id="box3" class="boxes"><h1>3</h1></div>
+              <div id="box4" class="boxes"><h1>4</h1></div>
+             </div>
+        </div>
+        <script >
+
+            let x = document.getElementById("box1");
+            let y = document.getElementById("box2");
+            let z = document.getElementById("box3");
+            let w = document.getElementById("box4");
+            let bodi= document.getElementById("shareer")
+            
+            x.addEventListener("mouseenter" ,function(){
+                
+                x.innerHTML= `<h1>${Math.floor(Math.random()*101)}</h1>`
+
+            })
+            x.addEventListener("mouseleave" ,function(){
+            x.innerHTML = `<h1>1</h1>`
+                
+            })
+            let clr = "red"
+            y.addEventListener("mouseenter",function(){
+            
+            if(clr == "red"){
+                y.style.backgroundColor="red";
+                clr = "green"
+            }
+            else if(clr =="green"){
+                y.style.backgroundColor="green";
+                clr = "blue"
+            }
+            else{
+                y.style.backgroundColor="blue"
+                clr = "red"
+            }
+            })
+            y.addEventListener("mouseleave" ,function(){
+                bodi.style.backgroundColor="white"
+                y.style.backgroundColor="white"
+            })
+            z.addEventListener("mouseenter",function(){
+            z.style.backgroundColor =`rgb(${Math.floor(Math.random() *256)} ,${Math.floor(Math.random()*256)} ,${Math.floor(Math.random()*256)})`
+            })
+            z.addEventListener("mouseleave" ,function(){
+                z.style.backgroundColor = "white"
+            })
+            z.addEventListener("click" ,function(){
+                
+
+            })
+            w.addEventListener("click" ,function(){
+                x.style.backgroundColor =`rgb(${Math.floor(Math.random() *256)} ,${Math.floor(Math.random()*256)} ,${Math.floor(Math.random()*256)})`
+                y.style.backgroundColor = `rgb(${Math.floor(Math.random() *256)} ,${Math.floor(Math.random()*256)} ,${Math.floor(Math.random()*256)})`
+                z.style.backgroundColor = `rgb(${Math.floor(Math.random() *256)} ,${Math.floor(Math.random()*256)} ,${Math.floor(Math.random()*256)})`
+                w.style.backgroundColor = `rgb(${Math.floor(Math.random() *256)} ,${Math.floor(Math.random()*256)} ,${Math.floor(Math.random()*256)})`
+                bodi.style.backgroundColor ="black";
+            })
+            w.addEventListener("mouseenter" ,function(){
+                x.innerHTML  = `<h1>${Math.floor(Math.random()*101)}</h1>`
+                y.innerHTML = `<h1>${Math.floor(Math.random()*101)}</h1>`
+                z.innerHTML = `<h1>${Math.floor(Math.random()*101)}</h1>`
+            })
+            w.addEventListener("mouseleave" ,function(){
+                x.style.backgroundColor="transparent"
+                y.style.backgroundColor = "transparent"
+                z.style.backgroundColor = "transparent"
+                w.style.backgroundColor = "transparent"
+                bodi.style.backgroundColor = "transparent"
+                x.innerHTML = "<h1>1</h1>"
+                y.innerHTML = "<h1>2</h1>"
+                z.innerHTML = "<h1>3</h1>"
+            })
+
+            y.addEventListener("click" ,function(){
+            
+                bodi.style.backgroundColor =`rgb(${Math.floor(Math.random() *256)} ,${Math.floor(Math.random()*256)} ,${Math.floor(Math.random()*256)})`
+            })
+
+
+
+
+        </script>
+    </body>
+</html>
